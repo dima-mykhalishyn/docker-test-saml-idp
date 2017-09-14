@@ -18,6 +18,11 @@ COPY config/simplesamlphp/authsources.php /var/www/simplesamlphp/config
 COPY config/simplesamlphp/saml20-sp-remote.php /var/www/simplesamlphp/metadata
 COPY config/simplesamlphp/server.crt /var/www/simplesamlphp/cert/
 COPY config/simplesamlphp/server.pem /var/www/simplesamlphp/cert/
+
+COPY config/simplesamlphp/core/SAML2.php /var/www/simplesamlphp/modules/saml/lib/IdP
+COPY config/simplesamlphp/core/UserPassBase.php /var/www/simplesamlphp/modules/core/lib/Auth
+COPY config/simplesamlphp/core/loginuserpass.php /var/www/simplesamlphp/modules/core/templates
+
 RUN touch /var/www/simplesamlphp/modules/exampleauth/enable
 
 # Apache
